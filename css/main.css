@@ -1,0 +1,41 @@
+div {
+  /* background-color: bisque; */
+}
+
+#one {
+  background-color: blue;
+  width: 10;
+}
+
+.chartreuse {
+  background-color: chartreuse;
+}
+
+h1 {
+  color: rgba(0, 255, 0, 0.5);
+}
+
+/* Width | Height | background-color | color  */
+
+/* px, %, em | rem */
+/* 100px - 1560px */
+/* 100px - 768px  */
+
+/* 1500 - 10% - 150px */
+/* 1200 - 10% - 120px */
+/* 1024 - 10% - 102px */
+
+/* color: names, Hex | rgb */
+
+/* 
+    "0-9 & a -f" 
+
+    #ff0000 
+
+*/
+
+/* 
+    "0-255"
+    rgb(255,0,0);
+
+*/
