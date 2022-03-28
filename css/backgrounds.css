@@ -1,0 +1,12 @@
+#bg {
+  background-image: url(../images/pexels-photomix-company-96627.jpg);
+  background-position: left center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -ms-background-size: cover;
+  background-size: cover;
+  height: 100vh; /*vh, vw*/
+}
