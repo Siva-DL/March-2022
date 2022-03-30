@@ -1,0 +1,44 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+header {
+  background-color: rgba(125, 125, 125, 0.8);
+  color: #fff;
+}
+
+.logo {
+  float: left;
+  padding: 10px;
+}
+.menu {
+  float: right;
+}
+
+.menu-item {
+  float: left;
+  list-style: none;
+  background-color: rgb(58, 58, 58);
+  padding: 15px;
+  /* line-height: 30px; */
+  margin-left: 1px;
+}
+.homeContent {
+  height: 100vh;
+  background: url(../images/flour-flower-png-transparent-png-images-pluspng-2.png)
+      repeat-x left center,
+    url(../images/pexels-photomix-company-96627.jpg) no-repeat left center fixed;
+  background-size: 10%, cover;
+  text-align: center;
+  padding-top: 200px;
+}
+.homeContentheader {
+  color: #fff;
+  font-size: 40px;
+  padding-top: 100px;
+}
+.clear {
+  clear: both;
+}
