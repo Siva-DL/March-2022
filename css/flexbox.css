@@ -17,4 +17,68 @@ nav {
 .menu {
   display: flex;
   list-style: none;
+  gap: 10px;
+}
+
+.logo {
+  padding: 10px;
+}
+
+.menu-item {
+  background-color: blueviolet;
+  padding: 10px;
+  /* width: 70px; */
+  /* line-height: 50px; */
+  /* text-align: center; */
+}
+
+.homeContent {
+  height: 100vh;
+  background: url(../images/pexels-photomix-company-96627.jpg) no-repeat center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.homeContentheader {
+  font-size: 40px;
+  color: #fff;
+}
+
+.subSection > ul {
+  display: flex;
+  width: 90vw;
+  height: 90vh;
+  margin: 100px auto;
+  list-style: none;
+  /* flex-wrap: wrap; */
+  /* align-content: space-between; */
+}
+
+/* .subSection ul li { */
+/* width: 33%; */
+
+/* flex-grow: 1; */
+/* } */
+.subSection ul li:nth-child(1) {
+  /* flex-grow: 1; */
+  /* width: 10%; */
+  background-color: aquamarine;
+  flex-grow: 10;
+}
+.subSection ul li:nth-child(2) {
+  /* width: 90%; */
+  background-color: rebeccapurple;
+  flex-grow: 2;
+}
+
+.li1 {
+  width: 20%;
+  order: 2;
+}
+
+.li2 {
+  width: 80%;
+  order: 1;
 }
