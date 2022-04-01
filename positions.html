@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        div {
+            width: 200px;
+            height: 200px;
+            border: 1px solid;
+            margin-top: 2px;
+        }
+
+        #static {
+            position: static;
+            left: 1000px;
+        }
+
+        #realtive {
+            position: relative;
+            width: 1000px;
+            background-color: red;
+            height: 500px;
+        }
+
+        #absolute {
+            position: absolute;
+            right: 0px;
+            top: 0px;
+            background-color: greenyellow;
+        }
+
+        #fixed {
+            position: fixed;
+            right: 0px;
+            width: 100%;
+            top: 0px;
+            background-color: blue;
+            z-index: -121;
+        }
+
+        #sticky {
+            position: sticky;
+            top: 50px;
+        }
+
+        header {
+            background-color: black;
+            color: #fff;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+        }
+
+        header nav {
+            width: 75%;
+            margin: auto;
+            background-color: rgb(65, 64, 64);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        header nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        header nav ul li {
+            padding: 20px;
+        }
+
+        .logo {
+            padding: 20px;
+        }
+
+        section {
+            padding-top: 75px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Static, realtive, absolute, fixed, sticky -->
+    <div id="static">
+        asdasd
+    </div>
+    <div id="realtive">
+        realtive
+        <div id="absolute">
+            absolute
+        </div>
+    </div>
+
+    <div id="fixed">
+        fixed
+    </div>
+    <div id="sticky">
+        sticky
+    </div>
+    <article style="height:100vh">asd</article>
+
+    <!-- <header>
+        <nav>
+            <h1 class="logo"> Logo </h1>
+            <ul>
+                <li> Home </li>
+                <li> Home </li>
+                <li> Home </li>
+            </ul>
+        </nav>
+    </header>
+    <section style="height: 150vh;"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, qui!</section> -->
+</body>
+
+</html>
