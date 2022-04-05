@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            list-style: none;
+            width: 90%;
+            margin: 100px auto;
+            padding: 0px;
+            padding: 10px;
+        }
+
+        ul li {
+            display: inline-block;
+            width: 200px;
+            height: 300px;
+            /* line-height: 200px; */
+            text-align: center;
+            border: 3px solid red;
+            transition: 1s;
+            overflow: hidden;
+            position: relative;
+
+        }
+
+        ul li h2 {
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            width: 100%;
+            height: 50px;
+            padding: 0px;
+            line-height: 50px;
+            margin: 0px;
+            background-color: #fff;
+            transform: translate(0px, 50px);
+            transition: 1s;
+        }
+
+        ul li img {
+            width: 100%;
+            transition: 1s;
+        }
+
+        ul li:nth-child(1):hover img {
+            transform: scale(1.2, 1.2);
+        }
+
+        ul li:nth-child(1):hover h2 {
+            transform: translate(0px, 0px);
+        }
+
+        /* ul li:nth-child(1):hover {
+            transform: scale(1.2, 1.2);
+        } */
+
+        ul li:nth-child(2):hover {
+            transform: rotate(3turn);
+            /* backface-visibility: hidden; */
+        }
+
+        ul li:nth-child(3):hover {
+            transform: translate(200px, 200px)
+        }
+
+        ul li:nth-child(4):hover {
+            transform: skewX(45deg) translate(200px, 0px) scale(1.5, 1.5);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Scale | rotate | translate | skew -->
+    <ul>
+        <li>
+            <img src="./images/photo-1541963463532-d68292c34b19.jpg" alt="photo-1541963463532-d68292c34b19">
+            <h2> Reading Book </h2>
+        </li>
+        <li>
+            Rotate
+        </li>
+        <li>
+            Translate
+        </li>
+        <li>
+            Skew
+        </li>
+    </ul>
+</body>
+
+</html>

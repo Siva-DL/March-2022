@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .demo {
+            background-color: red;
+            padding: 10px;
+        }
+
+        .demo p:only-child {
+            padding: 10px;
+            width: 500px;
+            background-color: aquamarine;
+        }
+
+        ul li {
+            background-color: red;
+            margin-top: 1px;
+        }
+
+        ul li:nth-child(2n+2) {
+            /* 2 [0,1,2,3,4,] + 1 */
+            background-color: lawngreen;
+            margin-top: 1px;
+        }
+
+        ul li:nth-child(3) {
+            background-color: lightseagreen;
+            margin-top: 1px;
+            padding: 10px;
+        }
+
+        ul li:first-child {
+            background-color: lightseagreen;
+            margin-top: 1px;
+            padding: 10px;
+        }
+
+        ul li:last-child {
+            background-color: lightseagreen;
+            margin-top: 1px;
+            padding: 10px;
+        }
+
+        h1 {
+            /* width: 350px; */
+            text-align: center;
+            margin: auto;
+            /* border-bottom: 1px solid; */
+            position: relative;
+        }
+
+        h1::after {
+            content: "";
+            width: 200px;
+            height: 3px;
+            position: absolute;
+            background-color: red;
+            right: 42%;
+            bottom: -15px;
+        }
+
+        h1::before {
+            content: "👍";
+        }
+
+        h1::selection {
+            background-color: lightsalmon;
+            color: red;
+        }
+
+        p::first-letter {
+            font-size: 48px;
+        }
+
+        p::first-line {
+            font-weight: bold;
+            color: red;
+        }
+
+        #btn {
+            padding: 10px;
+            width: 100px;
+            border: 1px solid;
+            background-color: cornflowerblue;
+            margin: 100px auto;
+            transition: 1s;
+            /* easing - animating impact */
+        }
+
+        #btn:hover {
+            background-color: rgb(80, 117, 187);
+            color: #fff;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="demo">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, nostrum. Lorem ipsum dolor sit amet,
+            consectetur adipisicing elit. Cupiditate laborum facere maxime eius molestias veniam quis voluptatum
+            quibusdam, totam, deserunt rerum. Qui soluta est maxime quis ab perspiciatis dicta deserunt.</p>
+    </div>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>6</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+    </ul>
+
+    <h1> lorem Text Header </h1>
+    <div id="btn"> Click Here!</div>
+</body>
+
+</html>
