@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- form -->
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, tempore!</p>
+
+    <form action="./header.html">
+        <div class="form-wrap">
+            <label for="username"> User Name </label>
+            <input type="text" id="username" required autocomplete="off" maxlength="10">
+        </div>
+        <div class="form-wrap">
+            <label for="password"> Password </label>
+            <input type="password" id="password" required readonly value="123131">
+        </div>
+
+        <input type="email" placeholder="Please enter Email" required disabled value="as@asdas.com">
+        <input type="search">
+        <input type="number" placeholder="enter Number" required maxlength="10">
+        <input type="file">
+        <label for="color"> Please Choose a color </label>
+        <input type="color" id="color">
+        <input type="date">
+        <input type="range">
+
+
+        <label for="male"> male </label>
+        <input type="radio" id="male" name="gender">
+
+        <label for="female"> female </label>
+        <input type="radio" id="female" name="gender">
+
+
+        <label for="Hyd"> Hyd</label>
+        <input type="checkbox" id="Hyd">
+        <label for="Banglore"> Banglore</label>
+        <input type="checkbox" id="Banglore">
+        <label for="Mumbai"> Mumbai</label>
+        <input type="checkbox" id="Mumbai">
+
+
+        <select name="city" id="city">
+            <option value="none">-- Please choose a City </option>
+            <option value="hyd"> Hyderabad </option>
+            <option value="ban"> Banglore </option>
+            <option value="viz">Vizag</option>
+            <option value="pune">Pune</option>
+        </select>
+
+
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+
+
+        <!-- <input type="submit" value="signup"> -->
+        <input type="button" value="signin">
+        <input type="reset" value="Reset">
+
+
+
+        <button type="button">signup</button>
+    </form>
+</body>
+
+</html>
