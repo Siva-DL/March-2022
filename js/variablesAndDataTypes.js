@@ -76,7 +76,7 @@ var _declaring; // undefined
 
 console.log(typeof empTyValue); // string
 console.log(typeof 10 > 11); // boolean
-console.log(typeof 11); // boolean
+console.log(typeof 11); // number
 console.log(typeof null); // object
 console.log(typeof undefined); // object
 
@@ -97,6 +97,27 @@ console.log(num_1 + num_2 + num_3); //
 
 // ++, --, +=, -=, *=
 // =, ==, ===
+
+var abc = 10;
+var user_name = "somex";
+
+user_name = userName + " is my Name";
+user_name += " is my Name";
+
+abc = abc - 5;
+abc -= 5;
+abc *= 5;
+
+console.log(abc); // 20;
+console.log(user_name);
+
+// --------------- comparison -----------------------
+// =, ==, ===
+var a = "test";
+
+// 10 - 10 // true
+// number - string // false
+console.log(10 == "10"); // true(==) | false if (===)
 
 // NON Primitive Data Types:
 
