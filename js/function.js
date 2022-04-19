@@ -31,3 +31,14 @@ getDate();
   console.log("IIFE is CALLED....!");
   return "This is IIFE Returned";
 })();
+
+// Passing Parameters
+
+function demoTestData(name, age) {
+  console.log(name, age);
+}
+var name = "testData";
+demoTestData("somex", 12); //
+demoTestData(); //
+demoTestData(); //
+demoTestData(); //
