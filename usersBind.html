@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 50%;
+            margin: 100px auto;
+            border-collapse: collapse;
+        }
+
+        tr,
+        td,
+        th {
+            border-bottom: 1px solid #000;
+            padding: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    #
+                </th>
+                <th>
+                    Name
+                </th>
+                <th>
+                    userName
+                </th>
+                <th>
+                    Email
+                </th>
+                <th>
+                    Contact
+                </th>
+            </tr>
+        </thead>
+        <tbody id="userDataTable">
+            <tr>
+                <td>
+                    1
+                </td>
+                <td>
+                    somex
+                </td>
+                <td>
+                    somex_1
+                </td>
+                <td>
+                    Email
+                </td>
+                <td>
+                    121231
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script src="./js/objects.js"></script>
+    <script>
+        const userDataTable = document.querySelector('#userDataTable');
+
+
+        console.log(Users)
+
+        let userTr = "<tr>";
+        for (const user of Users) {
+
+            userTr += `<td> ${user.id} </td>`
+            userTr += `<td> ${user.name} </td>`
+            userTr += `<td> ${user.username} </td>`
+            userTr += `<td> ${user.email} </td>`
+            userTr += `<td> ${user.phone} </td></tr>`
+        }
+        console.log(userTr)
+        userDataTable.innerHTML = userTr;
+
+
+        // Display the data in Individual cards
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            transition: 1s;
+        }
+
+        .demoElement {
+            width: 200px;
+            padding: 10px;
+            border: 1px solid;
+            display: none;
+            margin-left: -200px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="btnWrap">
+        <button type="button" id="btn"> Demo </button>
+    </div>
+
+    <div class="demoElement"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex, asperiores.</div>
+
+    <script>
+        const btn = document.querySelector('#btn');
+        const btnWrap = document.querySelector('.btnWrap');
+        const demoElement = document.querySelector('.demoElement');
+
+
+
+        // element.on click = fn();
+        // el.addEventListener('eventName', fn, true/false);
+
+        btn.addEventListener('click', function () {
+            console.log('this is clicked!...');
+            alert(1)
+            // demoElement.style.display = "none";
+
+            if (demoElement.style.display === "none") {
+                demoElement.style.display = "block"
+                // demoElement.style.marginLeft = "10px"
+            } else {
+                demoElement.style.display = "none"
+                // demoElement.style.marginLeft = "-200px"
+            }
+        }, true)
+
+
+        btnWrap.addEventListener('click', function () {
+            alert(2)
+            console.log('this is clicked!...');
+            // demoElement.style.display = "none";
+
+            // if (demoElement.style.display === "none") {
+            //     demoElement.style.display = "block"
+            //     // demoElement.style.marginLeft = "10px"
+            // } else {
+            //     demoElement.style.display = "none"
+            //     // demoElement.style.marginLeft = "-200px"
+            // }
+        }, true)
+
+
+
+        // btn.onmouseover = function () {
+        //     alert('1243');
+        // }
+
+
+    </script>
+</body>
+
+</html>

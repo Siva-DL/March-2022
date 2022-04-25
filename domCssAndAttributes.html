@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="demo1">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi laborum illo, nobis repudiandae suscipit
+        nisi! Tenetur officia aspernatur quisquam atque rerum expedita sint repellendus, unde dolor consequatur aliquam
+        quia? Ut!
+    </div>
+    <a href="#"> Demo </a>
+    <img src="" alt="">
+    <script>
+        const demo1 = document.querySelector('#demo1');
+
+
+        // element.style.cssProperty = CSSvalue;
+
+        demo1.style.backgroundColor = "red";
+        demo1.style.color = "#fff";
+        demo1.style.width = 300 + "px";
+
+
+        // Attributes
+
+        console.log(demo1.id);
+        console.log(demo1.className);
+        document.querySelector('a').href = 'http://google.com/';
+        console.log(document.querySelector('a').href);
+        document.querySelector('img').src = "./images/icon-for-user-5.jpg"
+
+        // setAttribute(), getAttrbutes();
+        demo1.setAttribute('class', 'democlass')
+        console.log(demo1.getAttribute('class'))
+
+
+
+
+
+    </script>
+</body>
+
+</html>

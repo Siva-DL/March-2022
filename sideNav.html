@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            transition: 1s;
+        }
+
+        main {
+            display: flex;
+        }
+
+        #mainHeader {
+            width: 10%;
+            height: 100vh;
+        }
+
+        #mainSection {
+            width: 80%;
+            height: 100vh;
+            overflow-y: scroll;
+        }
+
+        .one {
+            height: 100vh;
+            width: 100%;
+            background-color: crimson;
+        }
+
+        .one:nth-child(2) {
+            background-color: greenyellow;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <header id="mainHeader">
+            <button type="button" id="menuToggle"> Toggler </button>
+            <!-- Click on menuToggle  -->
+            <ul>
+                <li>
+                    Home
+                </li>
+                <li>
+                    Home
+                </li>
+                <li>
+                    Home
+                </li>
+            </ul>
+        </header>
+        <section id="mainSection">
+            <article class="one"> One </article>
+            <article class="one"> One </article>
+            <article class="one"> One </article>
+
+        </section>
+    </main>
+</body>
+
+</html>
