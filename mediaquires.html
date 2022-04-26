@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        #header nav {
+            display: flex;
+            height: 50px;
+            justify-content: space-between;
+            align-items: center;
+            background-color: beige;
+            padding: 0px 20px;
+        }
+
+        #logo {
+            flex-grow: 2;
+        }
+
+        #menu {
+            display: flex;
+            flex-grow: 10;
+            justify-content: flex-end;
+            list-style-type: none;
+            gap: 50px;
+        }
+
+        #menu li a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        #MenuBtn {
+            padding: 10px;
+            background-color: aquamarine;
+            border: none;
+            box-shadow: 0px 0px 2px 1px #000;
+            display: none;
+        }
+
+
+        /* Mobile First Approach  */
+
+        /* Desktop First Approach  */
+
+
+        @media screen and (min-width: 1024px) {
+            #MenuBtn {
+                display: inline;
+            }
+
+            #menu {
+                display: none;
+                flex-direction: column;
+                gap: 15px;
+                width: 100%;
+                margin-top: 320px;
+                text-align: center;
+                padding: 10px;
+                background-color: antiquewhite;
+                position: relative;
+                z-index: 99999;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main id="header">
+        <nav>
+            <div id="logo"> Logo </div>
+
+            <ul id="menu">
+                <li>
+                    <a href="#"> Home </a>
+                </li>
+                <li>
+                    <a href="#"> About </a>
+                </li>
+                <li>
+                    <a href="#"> Gallery </a>
+                </li>
+                <li>
+                    <a href="#"> Contact </a>
+                </li>
+                <li>
+                    <a href="#"> Home </a>
+                </li>
+                <li>
+                    <a href="#"> About </a>
+                </li>
+                <li>
+                    <a href="#"> Gallery </a>
+                </li>
+                <li>
+                    <a href="#"> Contact </a>
+                </li>
+            </ul>
+
+            <button type="button" id="MenuBtn"> Menu </button>
+        </nav>
+        <div id="mainContent">
+            <h1> THIS IS MAIN CONTENT..</h1>
+        </div>
+    </main>
+    <script>
+        const MenuBtn = document.querySelector('#MenuBtn');
+
+        const menu = document.querySelector('#menu');
+
+        menu.style.display = "none";
+        MenuBtn.onclick = function () {
+            if (menu.style.display === "none") {
+                menu.style.display = "flex";
+            } else {
+                menu.style.display = "none";
+            }
+        }
+
+    </script>
+</body>
+
+</html>

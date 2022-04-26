@@ -10,7 +10,7 @@
         * {
             margin: 0px;
             padding: 0px;
-            transition: 1s;
+            transition: 0.2s;
         }
 
         main {
@@ -18,12 +18,12 @@
         }
 
         #mainHeader {
-            width: 10%;
+            flex-grow: 2;
             height: 100vh;
         }
 
         #mainSection {
-            width: 80%;
+            flex-grow: 10;
             height: 100vh;
             overflow-y: scroll;
         }
@@ -61,9 +61,27 @@
             <article class="one"> One </article>
             <article class="one"> One </article>
             <article class="one"> One </article>
-
         </section>
     </main>
+    <script>
+        const menuToggle = document.querySelector('#menuToggle');
+        const mainHeader = document.querySelector('#mainHeader');
+        const mainSection = document.querySelector('#mainSection');
+
+        mainHeader.style.flexGrow = 2;
+        menuToggle.onclick = function () {
+
+            if (mainHeader.style.flexGrow == 2) {
+                mainHeader.style.flexGrow = 1;
+                mainSection.style.flexGrow = 11;
+            } else {
+                mainHeader.style.flexGrow = 2;
+                mainSection.style.flexGrow = 10;
+            }
+
+        };
+
+    </script>
 </body>
 
 </html>
