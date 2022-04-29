@@ -111,31 +111,31 @@
                     <div class="mb-4 border-1 border-dark border-bottom-custom-2 ps-1 text-secondary">
                         <div class="d-flex">
                             <i class="bi bi-lock-fill fs-4"></i>
-                            <input type="password" class="form-control" placeholder="Password">
+                            <input type="password" class="form-control" placeholder="Password" id="password">
                             <i class="bi bi-exclamation-octagon-fill"></i>
                         </div>
                     </div>
                     <div class="mb-3 border-1 border-dark border-bottom-custom-2 ps-1 text-secondary">
                         <div class="d-flex">
                             <i class="bi bi-envelope-fill fs-4"></i>
-                            <input type="email" class="form-control" placeholder="name">
+                            <input type="email" class="form-control" placeholder="name" id="email">
                             <i class="bi bi-exclamation-octagon-fill"></i>
                         </div>
                     </div>
                     <div class="mb-3 border-1 border-dark border-bottom-custom-2 ps-1 text-secondary">
                         <div class="d-flex">
                             <i class="bi bi-telephone-fill fs-4"></i>
-                            <input type="text" class="form-control" placeholder="name">
+                            <input type="text" class="form-control" placeholder="name" id="contact">
                             <i class="bi bi-exclamation-octagon-fill"></i>
                         </div>
                     </div>
                     <div class="mb-4 border-1 border-dark border-bottom-custom-2 ps-1 text-secondary">
                         <div class="d-flex">
-                            <select name="" id="" class="form-select">
+                            <select name="" id="city" class="form-select">
                                 <option value="-"> Please choose a value </option>
-                                <option value="-"> Please choose a value </option>
-                                <option value="-"> Please choose a value </option>
-                                <option value="-"> Please choose a value </option>
+                                <option value="hyd"> Hyd</option>
+                                <option value="bng"> Bng </option>
+                                <option value="goa"> Goa </option>
                             </select>
                             <i class="bi bi-exclamation-octagon-fill"></i>
                         </div>
@@ -143,26 +143,27 @@
                     <div class="mb-3 border-1 border-dark ps-1 text-secondary">
 
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="gender" id="male" value="male">
+                            <input class="form-check-input gender" type="radio" name="gender" id="male" value="male">
                             <label class="form-check-label" for="male">Male</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+                            <input class="form-check-input gender" type="radio" name="gender" id="female"
+                                value="female">
                             <label class="form-check-label" for="female">Female</label>
                         </div>
                         <i class="bi bi-exclamation-octagon-fill"></i>
                     </div>
                     <div class="mb-3 border-1 border-secondary ps-1 text-secondary border-top pt-3">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">
-                                Accept Terms & Conditions <i class="bi bi-exclamation-octagon-fill"
-                                    data-bs-toggle="tooltip" data-bs-placement="right" title="Please accept"></i>
+                            <input class="form-check-input" type="checkbox" value="" id="accept">
+                            <label class="form-check-label" for="accept">
+                                Accept Terms & Conditions <i class="bi bi-exclamation-octagon-fill"></i>
                             </label>
                         </div>
                     </div>
                     <div class="mb-1 mt-3">
-                        <button type="button" class="btn bg-custom-pink w-100 text-white fw-bold letter-space-2 mt-3">
+                        <button type="button" class="btn bg-custom-pink w-100 text-white fw-bold letter-space-2 mt-3"
+                            id="register">
                             Register </button>
                     </div>
 
@@ -171,16 +172,114 @@
             </div>
         </div>
     </main>
+    <article>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>UserName</th>
+                    <th>Password</th>
+                    <th>Email</th>
+                    <th>Contact</th>
+                    <th>City</th>
+                    <th>Gender</th>
+                    <th>T & C </th>
+                </tr>
+            </thead>
+            <tbody id="userBindData">
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td colspan="2">Larry the Bird</td>
+                    <td>@twitter</td>
+                </tr>
+            </tbody>
+        </table>
+    </article>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
     <script>
-        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-            return new bootstrap.Tooltip(tooltipTriggerEl)
-        })
+        // var _stringRegEx = /^[a-zA-Z]+$/;
+        // var _emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        // var _contactRegEx = /^[0-9]{10}/;
+
+        let $name, userName, password, email, contact, city, gender, accept, register;
+
+
+        $name = document.querySelector('#name')
+        userName = document.querySelector('#userName')
+        password = document.querySelector('#password')
+        email = document.querySelector('#email')
+        contact = document.querySelector('#contact')
+
+        city = document.querySelector('#city')
+        gender = document.getElementsByClassName('gender');
+        accept = document.querySelector('#accept');
+        register = document.querySelector('#register');
+
+
+        register.onclick = function () {
+            // if ($name.value === "") {
+            //     alert('name can not be empty..!')
+            // } else if (userName.value === "") {
+            //     alert('userName can not be empty..!')
+            // }
+
+            let exactGender;
+
+
+            for (var i in gender) {
+                if (gender[i].checked) {
+                    exactGender = gender[i].value
+                }
+            }
+
+
+            let arr = JSON.parse(localStorage.getItem('userrDetails')) ? JSON.parse(localStorage.getItem('userrDetails')) : [];
+            console.log(arr)
+
+            let userObject = {
+                name: $name.value,
+                userName: userName.value,
+                password: password.value,
+                email: email.value,
+                contact: contact.value,
+                city: city.value,
+                gender: exactGender,
+                accept: accept.checked
+            };
+
+            console.log(userObject)
+
+            arr.push(userObject);
+            localStorage.setItem('userrDetails', JSON.stringify(arr));
+
+
+
+
+        }
+
+        const webData = JSON.parse(localStorage.getItem('userrDetails'));
+
+        console.log(webData);
+
+
+
     </script>
 </body>
 
