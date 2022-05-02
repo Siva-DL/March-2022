@@ -98,41 +98,41 @@
                         <div class="d-flex">
                             <i class="bi bi-person-fill fs-4"></i>
                             <input type="text" class="form-control" placeholder="Name" id="name">
-                            <i class="bi bi-exclamation-octagon-fill"></i>
+                            <i class="bi bi-exclamation-octagon-fill errorName"></i>
                         </div>
                     </div>
                     <div class="mb-3 border-1 border-dark border-bottom-custom-2 ps-1 text-secondary">
                         <div class="d-flex">
                             <i class="bi bi-person-fill fs-4"></i>
                             <input type="text" class="form-control" placeholder="Username" id="userName">
-                            <i class="bi bi-exclamation-octagon-fill"></i>
+                            <i class="bi bi-exclamation-octagon-fill errorUserName"></i>
                         </div>
                     </div>
                     <div class="mb-4 border-1 border-dark border-bottom-custom-2 ps-1 text-secondary">
                         <div class="d-flex">
                             <i class="bi bi-lock-fill fs-4"></i>
                             <input type="password" class="form-control" placeholder="Password" id="password">
-                            <i class="bi bi-exclamation-octagon-fill"></i>
+                            <i class="bi bi-exclamation-octagon-fill errorPass"></i>
                         </div>
                     </div>
                     <div class="mb-3 border-1 border-dark border-bottom-custom-2 ps-1 text-secondary">
                         <div class="d-flex">
                             <i class="bi bi-envelope-fill fs-4"></i>
-                            <input type="email" class="form-control" placeholder="name" id="email">
-                            <i class="bi bi-exclamation-octagon-fill"></i>
+                            <input type="email" class="form-control" placeholder="Email" id="email">
+                            <i class="bi bi-exclamation-octagon-fill errorEmail"></i>
                         </div>
                     </div>
                     <div class="mb-3 border-1 border-dark border-bottom-custom-2 ps-1 text-secondary">
                         <div class="d-flex">
                             <i class="bi bi-telephone-fill fs-4"></i>
-                            <input type="text" class="form-control" placeholder="name" id="contact">
-                            <i class="bi bi-exclamation-octagon-fill"></i>
+                            <input type="text" class="form-control" placeholder="Contact" id="contact" maxlength="10">
+                            <i class="bi bi-exclamation-octagon-fill errorContact"></i>
                         </div>
                     </div>
                     <div class="mb-4 border-1 border-dark border-bottom-custom-2 ps-1 text-secondary">
                         <div class="d-flex">
                             <select name="" id="city" class="form-select">
-                                <option value="-"> Please choose a value </option>
+                                <option value="none"> Please choose a value </option>
                                 <option value="hyd"> Hyd</option>
                                 <option value="bng"> Bng </option>
                                 <option value="goa"> Goa </option>
@@ -173,7 +173,7 @@
         </div>
     </main>
     <article>
-        <table class="table">
+        <table class="table" style="display: none;">
             <thead>
                 <tr>
                     <th>#</th>
@@ -214,9 +214,10 @@
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
     <script>
-        // var _stringRegEx = /^[a-zA-Z]+$/;
-        // var _emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-        // var _contactRegEx = /^[0-9]{10}/;
+        const _stringRegEx = /^[a-zA-Z]{3,}$/;
+        const _emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        const _contactRegEx = /^[0-9]{10}/;
+        const _passwordRegEx = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,30}$/
 
         let $name, userName, password, email, contact, city, gender, accept, register;
 
@@ -232,6 +233,7 @@
         accept = document.querySelector('#accept');
         register = document.querySelector('#register');
 
+        // console.log(_stringRegEx.test('aAasd'));
 
         register.onclick = function () {
             // if ($name.value === "") {
@@ -240,34 +242,58 @@
             //     alert('userName can not be empty..!')
             // }
 
-            let exactGender;
+            // true - false
+            // false - true
+            if (!_stringRegEx.test($name.value)) {
+                document.querySelector('.errorName').style.display = "inline";
+            } else if (!_stringRegEx.test(userName.value)) {
+                document.querySelector('.errorName').style.display = "none";
+                document.querySelector('.errorUserName').style.display = "inline";
+            } else if (!_passwordRegEx.test(password.value)) {
+                document.querySelector('.errorUserName').style.display = "none";
+                document.querySelector('.errorPass').style.display = "inline";
+            } else if (!_emailRegex.test(email.value)) {
+                document.querySelector('.errorPass').style.display = "none";
+                document.querySelector('.errorEmail').style.display = "inline";
+            } else if (!_contactRegEx.test(contact.value)) {
+                document.querySelector('.errorEmail').style.display = "none";
+                document.querySelector('.errorContact').style.display = "inline";
+            } else {
+                document.querySelector('.errorContact').style.display = "none";
+                alert();
+
+                let exactGender;
 
 
-            for (var i in gender) {
-                if (gender[i].checked) {
-                    exactGender = gender[i].value
+                for (var i in gender) {
+                    if (gender[i].checked) {
+                        exactGender = gender[i].value
+                    }
                 }
+
+
+                let arr = JSON.parse(localStorage.getItem('userrDetails')) ? JSON.parse(localStorage.getItem('userrDetails')) : [];
+                console.log(arr)
+
+                let userObject = {
+                    name: $name.value,
+                    userName: userName.value,
+                    password: password.value,
+                    email: email.value,
+                    contact: contact.value,
+                    city: city.value,
+                    gender: exactGender,
+                    accept: accept.checked
+                };
+
+                console.log(userObject)
+
+                arr.push(userObject);
+                localStorage.setItem('userrDetails', JSON.stringify(arr));
             }
 
 
-            let arr = JSON.parse(localStorage.getItem('userrDetails')) ? JSON.parse(localStorage.getItem('userrDetails')) : [];
-            console.log(arr)
 
-            let userObject = {
-                name: $name.value,
-                userName: userName.value,
-                password: password.value,
-                email: email.value,
-                contact: contact.value,
-                city: city.value,
-                gender: exactGender,
-                accept: accept.checked
-            };
-
-            console.log(userObject)
-
-            arr.push(userObject);
-            localStorage.setItem('userrDetails', JSON.stringify(arr));
 
 
 
